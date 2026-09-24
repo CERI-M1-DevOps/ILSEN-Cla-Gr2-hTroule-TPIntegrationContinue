@@ -8,11 +8,20 @@ public class ListeSimple {
         return size;
     }
 
+    /**
+     * Ajoute un élément en tête de la liste.
+     * @param element l'élément à ajouter
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
 
+    /**
+     * Remplace la valeur du premier noeud contenant l'élément recherché.
+     * @param element l'élément à rechercher
+     * @param nouvelleValeur la nouvelle valeur à affecter au noeud trouvé
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -43,6 +52,10 @@ public class ListeSimple {
         return sb.toString();
     }
 
+    /**
+     * Supprime le premier noeud contenant l'élément recherché.
+     * @param element l'élément à supprimer
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
@@ -80,6 +93,10 @@ public class ListeSimple {
         } else return null;
     }
 
+    /**
+     * Recherche l'avant-dernier noeud de la liste.
+     * @return l'avant-dernier noeud, ou null si la liste a moins de deux éléments
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
@@ -94,6 +111,9 @@ public class ListeSimple {
         }
     }
 
+    /**
+     * Inverse l'ordre des noeuds de la liste.
+     */
     public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;
@@ -117,6 +137,11 @@ public class ListeSimple {
         return precedent;
     }
 
+    /**
+     * Échange la position de deux noeuds dans la liste.
+     * @param r1 le premier noeud à échanger
+     * @param r2 le second noeud à échanger
+     */
     public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
             return;
